@@ -34,7 +34,7 @@ public class Cart {
     public Vector<Product> searchBy(String attribute) {
         Vector<Product> searchResult = new Vector<>();
         for (Product product : products) {
-            if (product.getName().equals(attribute) || product.getType().name().equals(attribute)) {
+            if (product.getName().equals(attribute) || product.getCategory().name().equals(attribute)) {
                 searchResult.add(product);
             }
         }

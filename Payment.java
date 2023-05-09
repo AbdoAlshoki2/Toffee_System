@@ -6,10 +6,10 @@ public class Payment {
     }
 
     public void makePaymentOnDelivery(){
-
+        System.out.println("Payment on delivery");
     }
 
-    public void useLoyaltyPoints(){
+    public void useLoyaltyPoints(double schema , int points){
 
     }
 }

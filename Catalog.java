@@ -1,10 +1,10 @@
 import java.util.Vector;
 import java.util.Comparator;
 
-public class Inventory {
+public class Catalog {
     private Vector<Product> products;
 
-    public Inventory() {
+    public Catalog() {
         products = new Vector<>();
     }
 
@@ -23,7 +23,7 @@ public class Inventory {
                 sortedProducts.sort(Comparator.comparing(Product::getName));
                 break;
             case "type":
-                sortedProducts.sort(Comparator.comparing(Product::getType));
+                sortedProducts.sort(Comparator.comparing(Product::getCategory));
                 break;
             case "price":
                 sortedProducts.sort(Comparator.comparing(Product::getPrice));
@@ -44,7 +44,7 @@ public class Inventory {
                     }
                     break;
                 case "type":
-                    if (product.getType().toString().equals(attribute)) {
+                    if (product.getCategory().toString().equals(attribute)) {
                         results.add(product);
                     }
                     break;

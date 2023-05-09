@@ -9,13 +9,13 @@ enum ProductType {
 class Product {
     private String name;
     private double price;
-    private ProductType type;
+    private ProductType category;
     private int quantity;
 
-    public Product(String name, double price, ProductType type, int quantity) {
+    public Product(String name, double price, ProductType category, int quantity) {
         this.name = name;
         this.price = price;
-        this.type = type;
+        this.category = category;
         this.quantity = quantity;
     }
 
@@ -35,12 +35,12 @@ class Product {
         this.price = price;
     }
 
-    public ProductType getType() {
-        return type;
+    public ProductType getCategory() {
+        return this.category;
     }
 
     public void setType(ProductType type) {
-        this.type = type;
+        this.category = type;
     }
 
     public int getQuantity() {
@@ -53,6 +53,6 @@ class Product {
 
     public boolean equals(Product otherProduct) {
         return this.name.equals(otherProduct.getName()) && this.price == otherProduct.getPrice()
-                && this.type == otherProduct.getType() && this.quantity == otherProduct.getQuantity();
+                && this.getCategory() == otherProduct.getCategory() && this.quantity == otherProduct.getQuantity();
     }
 }
