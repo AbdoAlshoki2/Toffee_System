@@ -1,22 +1,21 @@
 import java.util.*;
-enum ProductType {
-    CANDY,
-    CHOCOLATE,
-    TOFFEE,
-    OTHERS
-}
-
-class Product {
+public class Product {
     private String name;
     private double price;
-    private ProductType category;
+    private Category category;
     private int quantity;
+    private double discount;
 
-    public Product(String name, double price, ProductType category, int quantity) {
+    public enum Category {
+        Candy, Toffee, Chocolate, Cakes, Donuts, Cookies, Biscuits, Wafers, IceCreams, Others;
+    }
+
+    public Product(String name, double price, Category category, int quantity, double discount) {
         this.name = name;
         this.price = price;
         this.category = category;
         this.quantity = quantity;
+        this.discount = discount;
     }
 
     public String getName() {
@@ -31,16 +30,16 @@ class Product {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice() {
         this.price = price;
     }
 
-    public ProductType getCategory() {
-        return this.category;
+    public Category getCategory() {
+        return category;
     }
 
-    public void setType(ProductType type) {
-        this.category = type;
+    public void setCategory() {
+        this.category = category;
     }
 
     public int getQuantity() {
@@ -51,8 +50,26 @@ class Product {
         this.quantity = quantity;
     }
 
-    public boolean equals(Product otherProduct) {
-        return this.name.equals(otherProduct.getName()) && this.price == otherProduct.getPrice()
-                && this.getCategory() == otherProduct.getCategory() && this.quantity == otherProduct.getQuantity();
+    public double getDiscount() {
+        return discount;
+    }
+
+    public void setDiscount() {
+        this.discount = discount;
+    }
+
+    public boolean equals(Object obj) {
+        if (obj instanceof Product) {
+            Product p = (Product) obj;
+            return this.getName().equals(p.getName()) && this.getPrice() == p.getPrice() &&
+                    this.getCategory() == p.getCategory() && this.getQuantity() == p.getQuantity() &&
+                    this.getDiscount() == p.getDiscount();
+        }
+        return false;
+    }
+
+    public void display() {
+        System.out.println("Name: " + getName() + ", Price: " + getPrice() + ", Category: " +
+                getCategory() + ", Quantity: " + getQuantity() + ", Discount: " + getDiscount());
     }
 }

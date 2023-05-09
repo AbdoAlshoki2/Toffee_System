@@ -1,64 +1,91 @@
-import java.util.Vector;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 
 public class Catalog {
-    private Vector<Product> products;
+    private ArrayList<Product> products;
 
     public Catalog() {
-        products = new Vector<>();
+        products = new ArrayList<Product>();
     }
 
-    public Vector<Product> getProducts() {
+    public ArrayList<Product> getProducts() {
         return products;
     }
 
-    public void setProducts(Vector<Product> products) {
+    public void setProducts(ArrayList<Product> products) {
         this.products = products;
     }
 
-    public Vector<Product> sortBy(String attribute) {
-        Vector<Product> sortedProducts = (Vector<Product>) products.clone();
-        switch (attribute) {
+    // sort products by attribute
+    public void sortBy(String attribute) {
+        switch (attribute.toLowerCase()) {
             case "name":
-                sortedProducts.sort(Comparator.comparing(Product::getName));
-                break;
-            case "type":
-                sortedProducts.sort(Comparator.comparing(Product::getCategory));
+                Collections.sort(products, Comparator.comparing(Product::getName));
                 break;
             case "price":
-                sortedProducts.sort(Comparator.comparing(Product::getPrice));
+                Collections.sort(products, Comparator.comparing(Product::getPrice));
+                break;
+            case "category":
+                Collections.sort(products, Comparator.comparing(Product::getCategory));
+                break;
+            case "quantity":
+                Collections.sort(products, Comparator.comparing(Product::getQuantity));
                 break;
             default:
+                System.out.println("Invalid attribute!");
                 break;
         }
-        return sortedProducts;
     }
 
-    public Vector<Product> searchBy(String attribute) {
-        Vector<Product> results = new Vector<>();
-        for (Product product : products) {
-            switch (attribute) {
-                case "name":
-                    if (product.getName().equals(attribute)) {
-                        results.add(product);
+    // search for products by attribute value
+    public ArrayList<Product> searchBy(String attribute, String value) {
+        ArrayList<Product> result = new ArrayList<Product>();
+        switch (attribute.toLowerCase()) {
+            case "name":
+                for (Product p : products) {
+                    if (p.getName().equalsIgnoreCase(value)) {
+                        result.add(p);
                     }
-                    break;
-                case "type":
-                    if (product.getCategory().toString().equals(attribute)) {
-                        results.add(product);
+                }
+                break;
+            case "category":
+                for (Product p : products) {
+                    if (p.getCategory().toString().equalsIgnoreCase(value)) {
+                        result.add(p);
                     }
-                    break;
-                case "price":
-                    if (product.getPrice() == Double.parseDouble(attribute)) {
-                        results.add(product);
+                }
+                break;
+            case "price":
+                double price = Double.parseDouble(value);
+                for (Product p : products) {
+                    if (p.getPrice() == price) {
+                        result.add(p);
                     }
-                    break;
-                default:
-                    break;
-            }
+                }
+                break;
+            case "quantity":
+                int quantity = Integer.parseInt(value);
+                for (Product p : products) {
+                    if (p.getQuantity() == quantity) {
+                        result.add(p);
+                    }
+                }
+                break;
+            default:
+                System.out.println("Invalid attribute!");
+                break;
         }
-        return results;
+        return result;
     }
+
+    public void display() {
+        System.out.println("Catalog:");
+        for (Product product : products) {
+            product.display();
+        }
+    }
+
 
     public void addProduct(Product product) {
         products.add(product);
@@ -68,8 +95,14 @@ public class Catalog {
         products.remove(product);
     }
 
-    public Vector<Product> display() {
-        return products;
+    public ArrayList<Product> filter(Product.Category category) {
+        ArrayList<Product> result = new ArrayList<Product>();
+        for (Product product : products) {
+            if (product.getCategory() == category) {
+                result.add(product);
+            }
+        }
+        return result;
     }
 
 }
