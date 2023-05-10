@@ -1,3 +1,6 @@
+
+package Classes;
+
 import java.util.ArrayList;
 public class StoreSales {
     private ArrayList<Bill> sales = new ArrayList<Bill>();

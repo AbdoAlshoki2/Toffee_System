@@ -1,3 +1,4 @@
+package Classes;
 enum PaymentWay{
     onDelivery , eWallet , creditCard ;
 }
