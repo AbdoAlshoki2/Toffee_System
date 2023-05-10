@@ -9,6 +9,8 @@ enum OrderState{
 public class Order {
 
     private Bill bill; // Need to add constructor to Bill class
+
+    //Need to add Customer attribute
     private String location ;
     private String dateToDelivery;
     private PaymentWay paymentWay;
@@ -18,6 +20,7 @@ public class Order {
 
     }
     public Order(Bill firstBill, String address){ // constructor
+        // here too, need to add Customer parameter
         this.bill = firstBill ;
         this.location = address;
     }
@@ -62,7 +65,9 @@ public class Order {
         this.orderState = newState;
     }
 
-
-
+    public void display(){
+        // Here print customer info
+        bill.displayDetails();
+    }
 
 }

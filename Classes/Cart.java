@@ -31,21 +31,21 @@ public class Cart {
         products.remove(product);
     }
 
-    public ArrayList<Product> searchBy(String attribute) {
-        ArrayList<Product> result = new ArrayList<>();
-        for (Product p : products) {
-            if (p.getName().equals(attribute) || p.getCategory().toString().equals(attribute)) {
-                result.add(p);
-            }
-        }
-        return result;
-    }
+//    public ArrayList<Product> searchBy(String attribute) {
+//        ArrayList<Product> result = new ArrayList<>();
+//        for (Product p : products) {
+//            if (p.getName().equals(attribute) || p.getCategory().toString().equals(attribute)) {
+//                result.add(p);
+//            }
+//        }
+//        return result;
+//    }
 
     public void display() {
         System.out.println("Cart contents:");
-        for (Product p : products) {
-            System.out.println(p.getName() + " - " + p.getQuantity() + " x " + p.getPrice() + " = " +
-                    (p.getPrice() * p.getQuantity() * (1 - p.getDiscount())));
+        for (int i = 0; i < products.size(); i++) {
+            System.out.print("Product "+ i+1 + " => ");
+            products.get(i).display();
         }
         System.out.println("Total payment: " + totalPayment());
     }

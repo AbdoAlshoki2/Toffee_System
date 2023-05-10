@@ -1,14 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="383c6929-a946-4052-9576-55072addbe0c" name="Changes" comment="" />
+    <list default="true" id="383c6929-a946-4052-9576-55072addbe0c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bill.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cart.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Catalog.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Order.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Payment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Product.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/StoreSales.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toffe_System.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WishList.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2POuxRRhmGZc9CyeiVCxMeTQddV" />
   <component name="ProjectViewState">
@@ -20,8 +45,9 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Alshoki/Desktop/Toffe_System",
-    "settings.editor.selected.configurable": "vcs.Git"
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/java projects/Toffee/src",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -38,5 +64,20 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

@@ -58,18 +58,14 @@ public class Product {
         this.discount = discount;
     }
 
-    public boolean equals(Object obj) {
-        if (obj instanceof Product) {
-            Product p = (Product) obj;
-            return this.getName().equals(p.getName()) && this.getPrice() == p.getPrice() &&
-                    this.getCategory() == p.getCategory() && this.getQuantity() == p.getQuantity() &&
-                    this.getDiscount() == p.getDiscount();
-        }
-        return false;
+    public boolean equal(Product obj) {
+        Product p = (Product) obj;
+        return this.getName().equals(p.getName()) &&
+                this.getCategory() == p.getCategory();
     }
 
     public void display() {
         System.out.println("Name: " + getName() + ", Price: " + getPrice() + ", Category: " +
-                getCategory() + ", Quantity: " + getQuantity() + ", Discount: " + getDiscount());
+                getCategory() + ", Quantity: " + getQuantity() + ", Discount: " + getDiscount() * 100 +"%");
     }
 }

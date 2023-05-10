@@ -1,12 +1,21 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
+import java.util.*;
+
+
 
 public class Catalog {
     private ArrayList<Product> products;
 
+    public enum ProductAttributes{
+        name , price , category , quantity;
+    }
+
     public Catalog() {
         products = new ArrayList<Product>();
+        Product p = new Product("Candy",20.0, Product.Category.Candy ,100 , 0.10);
+        Product p1 = new Product("Cupcake",15.0, Product.Category.Cakes ,200 , 0.10);
+        Product p2 = new Product("Galaxy",23.0, Product.Category.Chocolate ,300 , 0.10);
+        Product p3 = new Product("Kitkat",77.0, Product.Category.Chocolate ,400, 0.10);
+        products.add(p); products.add(p1); products.add(p2); products.add(p3);
     }
 
     public ArrayList<Product> getProducts() {
@@ -18,18 +27,18 @@ public class Catalog {
     }
 
     // sort products by attribute
-    public void sortBy(String attribute) {
-        switch (attribute.toLowerCase()) {
-            case "name":
+    public void sortBy(ProductAttributes attribute) {
+        switch (attribute) {
+            case name:
                 Collections.sort(products, Comparator.comparing(Product::getName));
                 break;
-            case "price":
+            case price:
                 Collections.sort(products, Comparator.comparing(Product::getPrice));
                 break;
-            case "category":
+            case category:
                 Collections.sort(products, Comparator.comparing(Product::getCategory));
                 break;
-            case "quantity":
+            case quantity:
                 Collections.sort(products, Comparator.comparing(Product::getQuantity));
                 break;
             default:
@@ -39,24 +48,24 @@ public class Catalog {
     }
 
     // search for products by attribute value
-    public ArrayList<Product> searchBy(String attribute, String value) {
+    public ArrayList<Product> searchBy(ProductAttributes attribute, String value) {
         ArrayList<Product> result = new ArrayList<Product>();
-        switch (attribute.toLowerCase()) {
-            case "name":
+        switch (attribute) {
+            case name:
                 for (Product p : products) {
                     if (p.getName().equalsIgnoreCase(value)) {
                         result.add(p);
                     }
                 }
                 break;
-            case "category":
+            case category:
                 for (Product p : products) {
                     if (p.getCategory().toString().equalsIgnoreCase(value)) {
                         result.add(p);
                     }
                 }
                 break;
-            case "price":
+            case price:
                 double price = Double.parseDouble(value);
                 for (Product p : products) {
                     if (p.getPrice() == price) {
@@ -64,7 +73,7 @@ public class Catalog {
                     }
                 }
                 break;
-            case "quantity":
+            case quantity:
                 int quantity = Integer.parseInt(value);
                 for (Product p : products) {
                     if (p.getQuantity() == quantity) {
@@ -95,14 +104,15 @@ public class Catalog {
         products.remove(product);
     }
 
-    public ArrayList<Product> filter(Product.Category category) {
+    public void filter(Product.Category category) {
         ArrayList<Product> result = new ArrayList<Product>();
+        int count = 1;
         for (Product product : products) {
             if (product.getCategory() == category) {
-                result.add(product);
+                System.out.print("Product "+ count++ + " => ");
+                product.display();
             }
         }
-        return result;
     }
 
 }
