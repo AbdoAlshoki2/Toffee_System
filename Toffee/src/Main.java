@@ -7,5 +7,6 @@ public class Main {
 
         MainSystem m = new MainSystem();
         m.something();
+        m.something2();
     }
 }

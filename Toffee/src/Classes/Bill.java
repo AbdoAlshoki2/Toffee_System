@@ -8,7 +8,7 @@ public class Bill {
     private ArrayList<Product> products;
 
 
-    public Bill(ArrayList<Product> p,String date){
+    public Bill(ArrayList<Product> p){
         this.products = p;
         this.date = date;
     }

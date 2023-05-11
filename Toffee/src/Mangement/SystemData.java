@@ -8,6 +8,10 @@ public class SystemData {
     ArrayList<Order> orders;
 
     Catalog catalog;
+
+    ArrayList<User> users;
+
+    ArrayList<Customer> customers;
     double LoyaltyPointsSchema;
 
 
@@ -50,6 +54,14 @@ public class SystemData {
 
     public void editLoyaltySchema(){
 
+    }
+
+    public void AddCustomer(Customer c){
+        customers.add(c);
+    }
+
+    public ArrayList<Customer> getCustomers() {
+        return customers;
     }
 
     public void searchInCatalog(Catalog.ProductAttributes attribute, String value){

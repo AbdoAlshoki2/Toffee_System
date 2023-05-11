@@ -1,4 +1,5 @@
 package Mangement;
+import Classes.Catalog;
 import Classes.Product;
 
 import java.util.*;
@@ -11,24 +12,29 @@ public class MainSystem {
     }
 
     public void something(){
+        Authentication class1 = new Authentication(s);
+        class1.sendOTP("abdelrahmanalshoki@gmail.com");
+
+    }
+
+    public void something2(){
         String choice;
-        System.out.println("Choose one of these  types:\n1-Candy\n2-Cake\n3-Chocolate");
+        System.out.println("Choose one of these  types:\n1-Name\n2-Price\n3-Quantity");
         Scanner scanner = new Scanner(System.in);
         choice = scanner.next();
         switch (choice){
-            case "Candy":
-                s.getCatalog().filter(Product.Category.Candy);
+            case "Name":
+                s.getCatalog().sortBy(Catalog.ProductAttributes.name);
                 break;
-            case "Cake":
-                s.getCatalog().filter(Product.Category.Cakes);
+            case "Price":
+                s.getCatalog().sortBy(Catalog.ProductAttributes.price);
                 break;
 
-            case "Chocolate":
-                s.getCatalog().filter(Product.Category.Chocolate);
+            case "Quantity":
+                s.getCatalog().sortBy(Catalog.ProductAttributes.quantity);
                 break;
             default:
 
         }
-
     }
 }

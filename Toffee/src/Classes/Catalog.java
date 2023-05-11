@@ -16,8 +16,11 @@ public class Catalog {
         Product p = new Product("Candy",20.0, Product.Category.Candy ,100 , 0.10);
         Product p1 = new Product("Cupcake",15.0, Product.Category.Cakes ,200 , 0.10);
         Product p2 = new Product("Galaxy",23.0, Product.Category.Chocolate ,300 , 0.10);
+        Product p5 = new Product("Cake",23.0, Product.Category.Cakes ,300 , 0.10);
+
+        Product p6 = new Product("Lollipop",23.0, Product.Category.Candy ,300 , 0.10);
         Product p3 = new Product("Kitkat",77.0, Product.Category.Chocolate ,400, 0.10);
-        products.add(p); products.add(p1); products.add(p2); products.add(p3);
+        products.add(p); products.add(p1); products.add(p2); products.add(p3); products.add(p5) ; products.add(p6);
     }
 
     public ArrayList<Product> getProducts() {
@@ -47,6 +50,7 @@ public class Catalog {
                 System.out.println("Invalid attribute!");
                 break;
         }
+        display();
     }
 
     // search for products by attribute value
