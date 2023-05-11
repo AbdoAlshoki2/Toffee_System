@@ -1,0 +1,34 @@
+package ToffeUsers;
+
+public class Customer {
+    //shoppingCart Cart
+    private String username, email, telephone, password, address;
+    private int loyaltyPoints;
+ 
+    public Customer(String username,String address, String email, String password, String telephone, int loyaltyPoints) {
+        this.username = username;
+        this.address = address;
+        this.email = email;
+        this.password = password;
+        this.telephone = telephone;
+        this.loyaltyPoints = loyaltyPoints;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+    
+
+    //public Bill generateBill();
+    public String getUserName() {
+        return username;
+    }
+
+    public void setUserName(String username) {
+        this.username = username;
+    }
+
+   
+    
+    
+}
