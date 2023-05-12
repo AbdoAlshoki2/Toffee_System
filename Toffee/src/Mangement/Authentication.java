@@ -44,8 +44,8 @@ public class Authentication {
         }
         return cust;
     }
-    public void Register(){
-        Scanner sc = new Scanner(System.in);
+    public void Regester(){
+        Scanner sc = new Scanner(System.in); 
         System.out.println("Enter Username: ");
         String username = sc.nextLine();
         System.out.println("Enter your address: ");
@@ -58,13 +58,24 @@ public class Authentication {
         }
         System.out.println("Enter your password: ");
         String password = sc.nextLine();
+        while(!validInputs(1,password)){
+            System.out.println("The password must be 8 characters or numbers. Please enter your password");
+            password = sc.nextLine();
+        }
         System.out.println("Enter your phone number: ");
         String telephone = sc.nextLine();
-        SD.AddCustomer(new Customer(username,email, telephone, password , address));
-        System.out.println("registered successfully");
+        
+          int otp = sendOTP(email);
+          System.out.println("Enter received OTP: ");
+          int receivedOTP = sc.nextInt();
+          while(otp != receivedOTP){
+              System.out.println("The entered OTP is incorrect. Please double-check the OTP you received and try again. ");
+              receivedOTP = sc.nextInt();
+          }
+        SD.AddCustomer(new Customer(username,address,email,password,telephone,0));
     }
 
-    public  void sendOTP(String email) {
+    public  int sendOTP(String email) {
         // Generate a random 6-digit OTP
         Random rand = new Random();
         int otp = rand.nextInt(900000) + 100000; // range: 100000 - 999999
@@ -114,6 +125,7 @@ public class Authentication {
         } catch (MessagingException e) {
             throw new RuntimeException(e);
         }
+        return otp;
     }
 
 
@@ -121,8 +133,10 @@ public class Authentication {
         boolean valid = true;
         switch(type) {
             case 1:{
-
-                break;
+                if(data.length()<8){
+                    valid = false;
+                }
+                 break;
             }
             case 2:{
                 String patternString = "^[A-Za-z0-9._%+-]+@gmail\\.com$";
