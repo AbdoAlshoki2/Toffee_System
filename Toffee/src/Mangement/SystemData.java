@@ -1,8 +1,7 @@
 package Mangement;
 import Classes.*;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
+import java.io.*;
+import java.util.*;
 
 import java.util.ArrayList;
 
@@ -19,7 +18,8 @@ public class SystemData {
 
 
     public SystemData(){
-        // implement files & read
+        customers = new ArrayList<Customer>();
+        loadCustomersFromFile();
         catalog = new Catalog();
     }
 
@@ -72,33 +72,13 @@ public class SystemData {
     }
     public void loadCustomersFromFile(){
               // Specify the path of the file to read
-        String filePath = "Customers.txt";
+        customers.add(new Customer("Nourhan Mahmoud","nourhanidc@gmail.com" ,
+                "01111111111","Nourhan123" , "Cairo"));
+        customers.add(new Customer("Sama Ahmed","Samaa2772@gmail.com" ,
+                "01222222222","SamaAhmed123" , "Cairo"));
+        customers.add(new Customer("Abdelrahman","Abdelrahmanalshoki@gmail.com" ,
+                "01333333333","Alshoki123" , "Cairo"));
 
-        try {
-            // Create a File object representing the file
-            File file = new File(filePath);
-
-            // Create a Scanner object to read the file
-            Scanner scanner = new Scanner(file);
-
-            // Read the file line by line
-            while (scanner.hasNextLine()) {
-                String username = scanner.nextLine();
-                String address = scanner.nextLine();
-                String email = scanner.nextLine();
-                String password = scanner.nextLine();
-                String telephone = scanner.nextLine();
-                Customer c = new Customer(username,address,email,password,telephone);
-                
-                
-            }
-
-            // Close the scanner
-            scanner.close();
-        } catch (FileNotFoundException e) {
-            // Handle file not found exception
-            e.printStackTrace();
-        }
-        }
+    }
 
 }

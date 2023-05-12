@@ -27,7 +27,17 @@ public class Authentication {
         }
         return -1;
     }
-    public User Login(){
+
+    private Boolean isFound(String email){
+        for(Customer c: SD.customers){
+            String UName = c.getName(), Password = c.getPassword();
+            if(email.equalsIgnoreCase(c.getEmail())){
+                return true;
+            }
+        }
+        return false;
+    }
+    public Customer Login(){
         Customer cust = null;
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter Username: ");
@@ -44,15 +54,15 @@ public class Authentication {
         }
         return cust;
     }
-    public void Regester(){
-        Scanner sc = new Scanner(System.in); 
+    public void Register(){
+        Scanner sc = new Scanner(System.in);
         System.out.println("Enter Username: ");
         String username = sc.nextLine();
         System.out.println("Enter your address: ");
         String address = sc.nextLine();
         System.out.println("Enter your email: ");
         String email = sc.nextLine();
-        while(!validInputs(2,email)){
+        while(!validInputs(2,email) || isFound(email)){
             System.out.println("Please enter a valid email: ");
             email = sc.nextLine();
         }
@@ -64,7 +74,7 @@ public class Authentication {
         }
         System.out.println("Enter your phone number: ");
         String telephone = sc.nextLine();
-        
+
           int otp = sendOTP(email);
           System.out.println("Enter received OTP: ");
           int receivedOTP = sc.nextInt();
@@ -128,6 +138,40 @@ public class Authentication {
         return otp;
     }
 
+    public Customer forgetPassword(){
+        Customer cust = null ;
+        Scanner sc = new Scanner(System.in);
+        String email = sc.nextLine();
+        while(!validInputs(2,email)){
+            System.out.println("Please enter a valid email: ");
+            email = sc.nextLine();
+        }
+        for (int i = 0; i < SD.customers.size(); i++) {
+            if(email.equalsIgnoreCase(SD.customers.get(i).getEmail())){
+                cust = SD.customers.get(i);
+            }
+        }
+        if(cust == null){
+            System.out.println("Don't found this Email");
+        }
+        else {
+            int otp = sendOTP(email);
+            System.out.println("Enter received OTP: ");
+            int receivedOTP = sc.nextInt();
+            while (otp != receivedOTP) {
+                System.out.println("The entered OTP is incorrect. Please double-check the OTP you received and try again. ");
+                receivedOTP = sc.nextInt();
+            }
+            System.out.println("Enter your new password: ");
+            String password = sc.nextLine();
+            while(!validInputs(1,password)){
+                System.out.println("The password must be 8 characters or numbers. Please enter your password");
+                password = sc.nextLine();
+            }
+            cust.setPassword(password);
+        }
+        return cust;
+    }
 
     private boolean validInputs(int type,String data){
         boolean valid = true;

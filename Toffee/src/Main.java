@@ -6,7 +6,6 @@ public class Main {
     public static void main(String[] args) {
 
         MainSystem m = new MainSystem();
-        m.something();
-        m.something2();
+        m.MainPage();
     }
 }
