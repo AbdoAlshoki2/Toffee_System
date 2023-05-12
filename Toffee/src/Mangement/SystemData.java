@@ -67,6 +67,35 @@ public class SystemData {
     public void searchInCatalog(Catalog.ProductAttributes attribute, String value){
         catalog.searchBy(attribute,value);
     }
+    public void loadCustomersFromFile(){
+              // Specify the path of the file to read
+        String filePath = "Customers.txt";
 
+        try {
+            // Create a File object representing the file
+            File file = new File(filePath);
+
+            // Create a Scanner object to read the file
+            Scanner scanner = new Scanner(file);
+
+            // Read the file line by line
+            while (scanner.hasNextLine()) {
+                String username = scanner.nextLine();
+                String address = scanner.nextLine();
+                String email = scanner.nextLine();
+                String password = scanner.nextLine();
+                String telephone = scanner.nextLine();
+                Customer c = new Customer(username,address,email,password,telephone);
+                
+                
+            }
+
+            // Close the scanner
+            scanner.close();
+        } catch (FileNotFoundException e) {
+            // Handle file not found exception
+            e.printStackTrace();
+        }
+        }
 
 }
