@@ -72,7 +72,7 @@ public class Authentication {
               System.out.println("The entered OTP is incorrect. Please double-check the OTP you received and try again. ");
               receivedOTP = sc.nextInt();
           }
-        SD.AddCustomer(new Customer(username,address,email,password,telephone,0));
+        SD.AddCustomer(new Customer(username,address,email,password,telephone));
     }
 
     public  int sendOTP(String email) {
