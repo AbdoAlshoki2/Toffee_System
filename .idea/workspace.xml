@@ -6,17 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="383c6929-a946-4052-9576-55072addbe0c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Classes/Bill.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Classes/Cart.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Classes/Catalog.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Classes/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Classes/Order.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Classes/Payment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Classes/Product.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Classes/StoreSales.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Classes/Toffe_System.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Classes/WishList.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Mangement/SystemData.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,16 +30,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Alshoki/Desktop/Toffe_System&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/Alshoki/Desktop/Toffe_System",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -60,6 +54,8 @@
       <option name="presentableId" value="Default" />
       <updated>1683340694730</updated>
       <workItem from="1683340696292" duration="19000" />
+      <workItem from="1683813230113" duration="46000" />
+      <workItem from="1683813326451" duration="598000" />
     </task>
     <servers />
   </component>
