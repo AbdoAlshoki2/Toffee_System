@@ -138,8 +138,8 @@ public class Authentication {
         return otp;
     }
 
-    public Customer forgetPassword(){
-        Customer cust = null ;
+    public void forgetPassword(){
+        int cust = - 1;
         Scanner sc = new Scanner(System.in);
         String email = sc.nextLine();
         while(!validInputs(2,email)){
@@ -148,10 +148,10 @@ public class Authentication {
         }
         for (int i = 0; i < SD.customers.size(); i++) {
             if(email.equalsIgnoreCase(SD.customers.get(i).getEmail())){
-                cust = SD.customers.get(i);
+                cust = i;
             }
         }
-        if(cust == null){
+        if(cust == -1){
             System.out.println("Don't found this Email");
         }
         else {
@@ -168,9 +168,8 @@ public class Authentication {
                 System.out.println("The password must be 8 characters or numbers. Please enter your password");
                 password = sc.nextLine();
             }
-            cust.setPassword(password);
+            SD.customers.get(cust).setPassword(password);
         }
-        return cust;
     }
 
     private boolean validInputs(int type,String data){
