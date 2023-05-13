@@ -34,8 +34,8 @@ public class Cart {
     }
 
     // Function to remove a product from the cart
-    public void removeProduct(Product product) {
-        products.remove(product); // Remove the product from the products list
+    public void removeProduct(int i) {
+        products.remove(products.get(i)); // Remove the product from the products list
     }
 
 
