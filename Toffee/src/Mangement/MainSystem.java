@@ -64,13 +64,14 @@ public class MainSystem { // Defining a public class called MainSystem
                     choice = sc.nextInt(); // Reading the customer's choice
                     if (choice == -1) break; // If the customer is done shopping, break out of the loop
                     quantity = sc.nextInt(); // Reading the quantity the customer wants to add to their shopping cart
-                    if (quantity <= current.get(choice - 1).getQuantity()) { // If the quantity the customer wants to add is less than or equal to the product's quantity in stock
+                    if (quantity <= current.get(choice - 1).getQuantity() && quantity <= 50) { // If the quantity the customer wants to add is less than or equal to the product's quantity in stock
                         Product p = current.get(choice - 1); // Initializing a new Product object with the chosen product's information
                         Product q = new Product(p.getName(), p.getPrice(), p.getCategory(), quantity, p.getDiscount()); // Initializing a new Product object with the chosen product's information and the customer's chosen quantity
+                        p.setQuantity(p.getQuantity()-quantity); // Reducing the quantity that customer added to the cart
 
                         loggedUser.addProduct(q); // Adding the product to the customer's shopping cart
                     } else { // If the quantity the customer wants to add is greater than the product's quantity in stock
-                        System.out.println("Invalid quantity, try again"); // Displaying an error message
+                        System.out.println("Invalid quantity, try again (Quantity <=50)"); // Displaying an error message
                     }
                 }
                 customerMenu(); // Returning to the customer menu
@@ -98,7 +99,7 @@ public class MainSystem { // Defining a public class called MainSystem
         Order new_order = new Order(n , address , c); // Initializing a new Order object with the customer's information and the generated bill
         new_order.setPaymentMethod(Order.PaymentWay.onDelivery); // Setting the payment method for the new order
         System.out.println("Your order has been completed successfully"); // Displaying a success message
-        System.out.println("The total price needed to pay is :" + n.totalPayment()); // Displaying the total price for the order
+        System.out.println("The total price needed to pay is :" +( n.totalPayment() + 10) +" EGP"); // Displaying the total price for the order
         paymentWay.makePaymentOnDelivery(); // Making a payment on delivery
         return new_order; // Returning the new order
     }

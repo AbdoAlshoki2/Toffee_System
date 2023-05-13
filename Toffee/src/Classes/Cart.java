@@ -47,6 +47,6 @@ public class Cart {
             System.out.print("Product "+ (i+1) + " => ");
             products.get(i).display(); // Call the display function of the Product class to display the product details
         }
-        System.out.println("Total payment: " + totalPayment()); // Display the total payment for the cart
+        System.out.println("Total payment: " + totalPayment() +"EGP"); // Display the total payment for the cart
     }
 }
