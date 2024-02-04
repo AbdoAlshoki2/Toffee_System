@@ -1,7 +1,7 @@
 # Toffee Store Online System
 > The Toffee Store Online System is a web-based application that allows customers to purchase toffees online. The system is designed to make it easy for customers to browse available toffees, place orders, and track their order status.
 
-#Features
+# Features
 The Toffee Store Online System includes the following features:
 
 - Product catalog: The system displays a list of available toffees, including product name, description, image, and price.
